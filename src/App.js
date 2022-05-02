@@ -6,29 +6,28 @@ import wrong from "./assets/images/wrong.png";
 
 function App() {
 
-	const [dat, setDat] = useState(false);
+	const [data, setData] = useState(false);
     const items = [1, 2, 3, 4, 5, 6, 7, 8, 9];
-    const itemList = items.map((x) => <Lists dat={dat}  key={x} data={x} />);
+    const itemList = items.map((x) => <Lists data={data}  key={x} id={x} />);
 
 
 	const random = Math.floor(Math.random() * 10) + 1;
 
 	console.log(random);
-	console.log(dat);
+	console.log(data);
 
 	function handleClick (e) {
 		console.log(e.target.id);
-		setDat(true);
+		setData(true);
 	}
 
 
-    function Lists({ data, dat }) {
+    function Lists({ data, id }) {
 
-	const condi = dat  ? null : 'wrong';
 
         return (
             <>
-                <div id={data}  className={ condi + ' ' + 'rounded-3xl wrong m-2 hover:bg-sky-700 bg-local border-2 border-black w-24 h-24 text-4xl'}
+                <div id={id}  className="rounded-3xl m-2 hover:bg-sky-700 bg-local border-2 border-black w-24 h-24 text-4xl"
 					onClick={handleClick}
 				>
                     {data}
