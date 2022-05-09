@@ -5,6 +5,11 @@
 	background-size: 100% 100%;
 }
 
+.correct {
+	background-image: url("./assets/images/jig.png");
+	background-repeat: no-repeat;
+	background-size: 100% 100%;
+}
 .red {
 	background-color: red;
 }
