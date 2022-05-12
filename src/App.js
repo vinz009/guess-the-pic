@@ -2,58 +2,71 @@ import React, { useEffect, useState } from "react";
 
 import "./App.css";
 import jig from "./assets/images/jigglypuff-wink.png";
-import wrong from "./assets/images/wrong.png";
 
-    const random = Math.floor(Math.random() * 3) + 1;
+const random = Math.floor(Math.random() * 3) + 1;
 
-	console.log(random);
+console.log(random);
 
 
+
+	const initialList = [
+		{ id: 1, state: "" },
+		{ id: 2, state: "" },
+		{ id: 3, state: "" },
+	];
 
 function App() {
-    const [items,setItems] = useState([
-        {
-            id: 1,
-            state: false,
-        },
-        {
-            id: 2,
-            state: false,
-        },
-        {
-            id: 3,
-            state: false,
-        },
-    ]);
 
-
-
-    function Lists({ id }) {
-
-	const [state, setState] = useState("false")	
-	const message = " ";
 	
-		function handleClick() {
-			if(random === id) {
-				setState("correct");
+    const wrong = ["isa pa", "try again", "nope"];
+    const [mesa, setMesa] = useState("");
+    const [state, setState] = useState("");
 
+	const correct = "korek ka dyan pare";
+
+	const stat = ["wrong","correct"];
+
+	const [data, setData] = useState(initialList);
+
+	function mes () {
+		setMesa("wow");
+		console.log(mesa);
+	}
+
+    function handleClick(itemId) {
+		setData(data.map(indi => {
+			if( indi.id === itemId && random === itemId) {
+				return {
+					...indi,
+					state: stat[1] 
+				};
+			} 
+			if( indi.id === itemId && random !== itemId) {
+				return {
+					...indi,
+					state: stat[0] 
+				};
 			}
 			else {
-				setState("wrong");
+				return indi;
 			}
+		})) 
 			
-		}
-
-        return (
-            <>
-                <div
-                    className={ `${state} m-2 h-24 w-24 rounded-3xl border-2 border-black bg-local text-4xl hover:bg-sky-700` }
-                    onClick={() => handleClick()}
-                >
-                </div>
-            </>
-        );
     }
+
+	const lists = data.map( item => 
+
+                <div
+					key={item.id}
+                    className={`${item.state} m-2 h-24 w-24 cursor-pointer rounded-3xl border-2 border-black bg-local text-4xl hover:bg-sky-700`}
+                    onClick={() => {
+                        handleClick(item.id);
+						mes();
+                   		}
+					}
+                >
+				</div>
+	);
 
     return (
         <div>
@@ -62,15 +75,18 @@ function App() {
                     Guess the Pic!
                 </h1>
                 <div className="flex flex-wrap ">
-
-				<Lists id={1} /> 
-				<Lists id={2} /> 
-				<Lists id={3} /> 
-
-
-				</div>
-                <div></div>
+				{lists}
+                </div>
+                <button
+                    className="border-2"
+                    onClick={() => window.location.reload()}
+                >
+                    Reload
+                </button>
             </div>
+			<div>
+			{mesa}
+			</div>
         </div>
     );
 }
