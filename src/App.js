@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from "react";
 
 import "./App.css";
-import {itemList} from './components/items.js';
-import Main from './components/main.js';
-import Message from './components/message.js';
-import List from './components/list.js';
+import { itemList } from "./components/items.js";
+import Main from "./components/main.js";
+import Message from "./components/message.js";
+import List from "./components/list.js";
 
 const random = Math.floor(Math.random() * 9) + 1;
 
@@ -75,12 +75,11 @@ function App() {
         ></div>
     ));
 
-	
     return (
-		<Main>
-				<Message word={word} />
-				<List lists={lists} />
-		</Main>
+        <Main>
+            <Message word={word} />
+            <List lists={lists} />
+        </Main>
     );
 }
 
