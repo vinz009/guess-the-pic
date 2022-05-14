@@ -1,28 +1,22 @@
 import React, { useEffect, useState } from "react";
 
 import "./App.css";
+import {itemList} from './components/items.js';
+import Main from './components/main.js';
+import Message from './components/message.js';
+import List from './components/list.js';
 
-const random = Math.floor(Math.random() * 3) + 1;
+const random = Math.floor(Math.random() * 9) + 1;
 
 console.log(random);
 
-const initialList = [
-    { id: 1, state: "", inc: "", ev: 0 },
-    { id: 2, state: "", inc: "", ev: 0 },
-    { id: 3, state: "", inc: "", ev: 0 },
-];
-
-
 function App() {
     const stat = ["wrong", "correct"];
-
-    const [data, setData] = useState(initialList);
-
-    //index func
+    const [data, setData] = useState(itemList);
     const [inc, setInc] = useState(0);
     const [index, setIndex] = useState("");
-    const wrong = ["", "isa pa", "try again", "nope", "bagong pilipinas"];
-    const correct = ["korek ka dyan pare", "Yes po tama", "Panalo", "Correct"];
+    const wrong = ["", "Isa Pa", "Try Again", "Nope", "Wrong"];
+    const correct = ["Korek Ka Dyan Pare", "Yes Po Tama", "Panalo", "Correct"];
     const [word, setWord] = useState(wrong);
 
     useEffect(() => {
@@ -81,23 +75,12 @@ function App() {
         ></div>
     ));
 
+	
     return (
-        <div>
-            <div className="flex flex-col">
-                <h1 className="mt-8 text-center text-4xl text-amber-50">
-                    Guess the Pic!
-                </h1>
-                <div className="flex flex-wrap ">{lists}</div>
-                <button
-                    className="border-2"
-                    onClick={() => window.location.reload()}
-                >
-                    Reload
-                </button>
-            </div>
-            {word}
-            <div></div>
-        </div>
+		<Main>
+				<Message word={word} />
+				<List lists={lists} />
+		</Main>
     );
 }
 
