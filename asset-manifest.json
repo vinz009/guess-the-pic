@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/guess-the-pic/static/css/main.ca3b2068.css",
+    "main.js": "/guess-the-pic/static/js/main.d7633e33.js",
+    "static/media/wrong2.png": "/guess-the-pic/static/media/wrong2.5198dc281ff55abe4e85.png",
+    "static/media/jig.png": "/guess-the-pic/static/media/jig.4b3520fdc6c0c61b4ba1.png",
+    "index.html": "/guess-the-pic/index.html",
+    "main.ca3b2068.css.map": "/guess-the-pic/static/css/main.ca3b2068.css.map",
+    "main.d7633e33.js.map": "/guess-the-pic/static/js/main.d7633e33.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.ca3b2068.css",
+    "static/js/main.d7633e33.js"
+  ]
+}
