@@ -5,6 +5,7 @@ import { itemList } from "./components/items.js";
 import Main from "./components/main.js";
 import Message from "./components/message.js";
 import List from "./components/list.js";
+import  increment  from "./util/increment.js";
 
 const random = Math.floor(Math.random() * 9) + 1;
 
@@ -29,16 +30,7 @@ function App() {
 
     function message(itemId) {
         setIndex(itemId);
-
-        const ll = data.map((e) => e.ev);
-        const hh = ll.indexOf(1) + 1;
-        console.log(hh);
-
-        if (inc === 3) {
-            setInc(1);
-        } else {
-            setInc(inc + 1);
-        }
+		setInc(increment(inc));
     }
 
     function handleClick(itemId) {
