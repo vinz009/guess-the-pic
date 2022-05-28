@@ -28,11 +28,21 @@ function App() {
         }
     }, [index, inc]);
 
+    /**
+     * message.
+     *
+     * @param {number} itemId - return index of onClick event.
+     */
     function message(itemId) {
         setIndex(itemId);
 		setInc(increment(inc));
     }
 
+    /**
+     * handleClick. onClick event.
+     *
+     * @param {number} itemId - return index of onClick event.
+     */
     function handleClick(itemId) {
         setData(
             data.map((indi) => {
