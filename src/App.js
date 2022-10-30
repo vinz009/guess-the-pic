@@ -6,6 +6,7 @@ import Main from "./components/main.js";
 import Message from "./components/message.js";
 import List from "./components/list.js";
 import  increment  from "./util/increment.js";
+import {  ShakeHard } from "reshake";
 
 const random = Math.floor(Math.random() * 9) + 1;
 
@@ -22,11 +23,11 @@ function App() {
 
     useEffect(() => {
         if (index === random) {
-            setWord(correct[inc]);
-        } else {
+           setWord(correct[inc]);
+      } else {
             setWord(wrong[inc]);
         }
-    }, [index, inc]);
+    }, [index, word,  inc]);
 
     /**
      * message.
@@ -67,14 +68,16 @@ function App() {
     }
 
     const lists = data.map((item) => (
+	<ShakeHard>
         <div
             key={item.id}
-            className={`${item.state} m-2 h-24 w-24 cursor-pointer rounded-3xl border-2 border-black bg-local text-4xl hover:bg-sky-700`}
+            className={`${item.state}  m-2 h-24 w-24 cursor-pointer rounded-3xl border-2 border-black bg-local text-4xl hover:bg-sky-700`}
             onClick={() => {
                 handleClick(item.id);
                 message(item.id);
             }}
         ></div>
+	</ShakeHard>
     ));
 
     return (
