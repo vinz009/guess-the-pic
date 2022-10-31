@@ -1,6 +1,6 @@
 export default function List({ lists }) {
     return (
-        <div className="flex flex-wrap justify-center sm:container ">
+        <div className="grid grid-cols-3  ">
             {lists}
         </div>
     );
