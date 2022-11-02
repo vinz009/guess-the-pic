@@ -72,7 +72,7 @@ function App() {
 	<ShakeHard>
         <div
             key={item.id}
-            className={`${item.state}  m-2 h-24 w-24 cursor-pointer rounded-3xl border-2 border-black bg-local text-4xl hover:bg-sky-700`}
+            className={`${item.state}  m-2 h-24 w-24 md:w-40 md:h-40 cursor-pointer rounded-3xl border-2 border-black bg-local text-4xl hover:bg-sky-700`}
             onClick={() => {
                 handleClick(item.id);
                 message(item.id);
