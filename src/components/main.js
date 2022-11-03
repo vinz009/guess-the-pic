@@ -17,8 +17,8 @@ export default function Main({ children }) {
                 </button>
 	    	</div>
 	    <div className="mt-4">
-	    <a href={'https://www.python.org/about/apps/'}>
-	    <FaHouseUser />
+	    <a href={'https://vinz009.github.io/homepage/'}>
+	    <FaHouseUser size={40} />
 	    </a>
 	    </div>
             </div>
